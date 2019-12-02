@@ -94,11 +94,23 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/txtDOB"
+                android:id="@+id/txtAge"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:outlineProvider="bounds"
+
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:outlineProvider="bounds"
                 android:layout_height="32dp"
                 android:layout_marginTop="9dp"
-                android:text="Select Date of Birth" />
+                android:text="Select Date Of Birth"
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -129,27 +141,33 @@
                     android:text="Others" />
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/txtAge"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtGrossIncome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:hint="Age"
-                android:inputType="number" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/txtFillingDate"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Gross Income"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtRRSP"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:hint="TaxFillingDate"
-                android:inputType="date" />
+                android:layout_height="wrap_content">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="RRSP Contributed"
+                    android:inputType="numberDecimal" />
 
-            <EditText
-                android:id="@+id/txtRRSPContributed"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:hint="RRSP Contributed"
-                android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <Button
