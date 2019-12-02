@@ -1,136 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="fill_parent"
-android:layout_height="fill_parent"
-android:background="#E68E0A">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".DataEntryActivity">
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter your details"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textSize="22sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtFirstName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <TextView
+                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="First Name" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:fontFamily="monospace"
+                android:inputType="textPersonName"
+                android:text="Income tax calculator for Ontario"
+                android:textAlignment="center"
+                android:textColor="@color/design_default_color_secondary_variant"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtLastName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
+                android:id="@+id/edSINnumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Last Name" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:hint="Enter SIN Number"
+                android:inputType="number"
+                android:maxLength="9" />
 
-        <TextView
-            android:id="@+id/txtAge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:outlineProvider="bounds"
-
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/txtDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:outlineProvider="bounds"
-            android:text="Select Date Of Birth"
-
-            android:textSize="18sp" />
-
-        <RadioGroup
-            android:id="@+id/rgGender"
-            android:layout_width="match_parent"
-            android:layout_height="95dp">
-
-            <RadioButton
-                android:id="@+id/rbMale"
-                android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:text="Male" />
-
-            <RadioButton
-                android:id="@+id/rbFemale"
-                android:layout_width="match_parent"
-                android:layout_height="27dp"
-                android:text="Female" />
-
-            <RadioButton
-                android:id="@+id/rbOthers"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:text="Others" />
-        </RadioGroup>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtGrossIncome"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
+                android:id="@+id/txtFName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_action_name"
-                android:hint="Gross Income"
-                android:inputType="numberDecimal" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:hint="Enter First Name here" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edtRRSP"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
+                android:id="@+id/txtLName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:drawableLeft="@drawable/ic_action_name"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:hint="Enter Last Name Here" />
+
+            <TextView
+                android:id="@+id/txtDOB"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="9dp"
+                android:text="Select Date of Birth" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="Gender" />
+
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="match_parent"
+                android:layout_height="95dp">
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/rbOthers"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:text="Others" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/txtAge"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Age"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/txtFillingDate"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="TaxFillingDate"
+                android:inputType="date" />
+
+
+            <EditText
+                android:id="@+id/txtRRSPContributed"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:hint="RRSP Contributed"
                 android:inputType="numberDecimal" />
 
-        </com.google.android.material.textfield.TextInputLayout>
 
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate" />
 
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-
-            android:text="Submit" />
-
-
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
