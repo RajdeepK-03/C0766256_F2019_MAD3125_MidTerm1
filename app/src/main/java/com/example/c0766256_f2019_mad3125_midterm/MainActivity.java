@@ -27,9 +27,6 @@ public class MainActivity  extends AppCompatActivity  {
     RadioButton rbMale;
     RadioButton rbFemale;
     RadioButton rbOthers;
-    TextView txtFullName;
-    EditText edtFname;
-    EditText edtLname;
     Button btnCalculate;
     TextView txtAge;
     DatePickerDialog datePickerDialog;
