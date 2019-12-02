@@ -3,6 +3,7 @@ package com.example.c0766256_f2019_mad3125_midterm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,9 +28,9 @@ public class MainActivity  extends AppCompatActivity  {
     RadioButton rbMale;
     RadioButton rbFemale;
     RadioButton rbOthers;
-    TextView txtFullName;
-    EditText edtFname;
-    EditText edtLname;
+    EditText fname;
+    EditText lname;
+    EditText Sinnumber;
     Button btnCalculate;
     TextView txtAge;
     DatePickerDialog datePickerDialog;
@@ -63,10 +64,15 @@ public class MainActivity  extends AppCompatActivity  {
             }
         });
         txtAge=findViewById(R.id.txtAge);
+        fname = findViewById(R.id.edtFname);
+        lname = findViewById(R.id.edtLname);
+        Sinnumber = findViewById(R.id.edSINnumber);
         rgGender=findViewById(R.id.rgGender);
         rbMale=findViewById(R.id.rbMale);
         rbFemale=findViewById(R.id.rbFemale);
         rbOthers=findViewById(R.id.rbOthers);
+        calculate();
+
         rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -95,7 +101,23 @@ public class MainActivity  extends AppCompatActivity  {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         txtDate.setText(sdf.format(calendar.getTime()));
+    }
 
+        public void calculate()
+        {
+
+            btnCalculate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    CRACustomer cra = new CRACustomer(Sinnumber.getText().toString(), fname.getText().toString(), lname.getText().toString(), rgGender.toString());
+                    Intent intent=new Intent(MainActivity.this,TaxDetailsActivity.class);
+
+                intent.putExtra("CRACustomer", cra);
+//
+                    startActivity(intent);
+                }
+            });
 
 
 
