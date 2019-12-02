@@ -6,5 +6,8 @@ import android.os.Parcelable;
 public class CRACustomer
 {
 
+
+
+    
 }
 
