@@ -14,7 +14,8 @@ public class CRACustomer implements Parcelable
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(String gender)
+    {
         this.gender = gender;
     }
 
@@ -27,10 +28,6 @@ public class CRACustomer implements Parcelable
         this.gender = gender;
     }
 
-    //    public CRACustomer(String fullName)
-//    {
-//       this.fullName = fullName;
-//    }
     public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>() {
         @Override
         public CRACustomer createFromParcel(Parcel in) {
@@ -71,7 +68,8 @@ public class CRACustomer implements Parcelable
         return lName.toUpperCase() + " , " + fName;
     }
 
-    public void setFullName(String fullName) {
+    public void setFullName(String fullName)
+    {
         this.fullName = fullName;
     }
 
@@ -79,7 +77,8 @@ public class CRACustomer implements Parcelable
         return fName;
     }
 
-    public void setfName(String fName) {
+    public void setfName(String fName)
+    {
         this.fName = fName;
     }
 
